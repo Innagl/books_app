@@ -35,8 +35,14 @@ const MyList = ({ mealPlans, addMeal, deleteDay, selectedDay, setSelectedDay }) 
             //Меняем по клику наше состояние
             onClick={() => setSelectedDay(id)}
             >
-                <p>{title}</p>
-                <p>{mealForADay}</p>
+                <p className="title">{title}</p>
+
+                {/* STEP 30
+                Если мы печатаем много букв то у нас растягивается карточка
+                Поэтому мы должны лимитировать количество букв которые появляются в карточке
+                Мы жолжны это лимитировать в MyList.js 
+                Будем использовать метод Джаваскрипта substring() ограничив количество на 60 знаков*/}
+                <p className="title">{mealForADay.substring(0, 10)}</p>
 
                 {/* STEP 13
                 Прописываем логику кнопки Delete
