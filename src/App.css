@@ -1,78 +1,112 @@
 body {
-    background: url(food.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: #181A1A;
+    color: #ffffff;
 }
 
-h1 {
-    font-family: "Poppins", sans-serif;
-    background-color: #dcedf7;
-    border-radius: 20px;
-    padding: 16px;
-}
-
-.button-add {
-    font-family: "Poppins", sans-serif;
-    background-color: #77cf40;
-    padding: 20px;
-    border-radius: 20px;
-    border: none;
-    font-size: 16px;
-}
-
-.button-delete {
-    font-family: "Poppins", sans-serif;
-    background: none;
-    border: 0px;
-    font-size: 16px;
-    color: red;
-}
-
-.App {
+nav {
     display: flex;
-    justify-content: space-around;
-}
-
-.whole-plan {
-    width: 70%;
-    height: 100vh;
-}
-
-.myInput {
-    width: 70%;
-    height: 20px;
-    padding: 12px;
-    border-radius: 20px;
-    display: block;
-    margin-top: 32px;
-}
-
-textarea {
-    display: block;
-    border: solid 1px #ddd;
-    margin-top: 32px;
-    width: 70%;
-    height: 200px;
-    border-radius: 20px;
+    justify-content: flex-end;
     padding: 16px;
+
 }
 
-.selected {
-    background-color: aqua;
+.item {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #191512;
+    font-family: "Inter", sans-serif;
 }
 
-.default {
-    background-color: rgb(140, 255, 0);
+.start {
+    margin-right: auto;
+
 }
 
-p {
-    color: #ddd;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
+
+.search-books-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
-.title {
-    color: #0e0d0d;
-    font-family: "Poppins", sans-serif;
-    font-size: 16px;
+
+.slides-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-slides {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+}
+
+.link {
+    color: #ffffff;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    background-color: #313333;
+    border: solid 1px #626666;
+    color: #ffffff;
+    border-radius: 8px;
+    width: 56vw;
+    height: 48px;
+    font-size: 18px;
+    padding: 0px 16px;
+}
+
+.book-container {
+    background-color: black;
+    padding: 24px;
+    border-radius: 24px;
+}
+
+.image-fact {
+    width: 10vw;
+    width: 20vh;
+}
+
+.text-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    height: 50px;
+    width: 10vw;
+    border-radius: 8px;
+}
+
+.filled-btn {
+    background-color: #CDE7BE;
+    color: #181A1A;
+}
+
+.stroke-btn {
+    border: solid 1px #CDE7BE;
+    background-color: #181A1A;
+    color: #CDE7BE;
+    width: 72px;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.books-loved {
+    width: 20vw;
 }
