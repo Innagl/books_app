@@ -11,7 +11,7 @@ import { useState } from 'react';
 import HomePage from "./HomePage";
 import Favourites from "./Favourites";
 import './App.css'
-import Facts from "./Facts";
+import DidYouKnow from "./DidYouKnow";
 
 
 
@@ -37,18 +37,18 @@ function App() {
           </svg>
           <Link to="/" className="item link">Home page</Link>
           <Link to="/favourites" className="item link">Favourites</Link>
-          <Link to="/facts" className="item link">Facts</Link>
+          <Link to="/DidYouKnow" className="item link">Did you now?</Link>
         </nav>
 
 
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/favourites" element={<Favourites />} />
-          <Route path="/facts" element={<Facts />} />
+          <Route path="/DidYouKnow" element={<DidYouKnow />} />
         </Routes>
       </Router>
 
-      <HomePage bookList={bookList} setBookList={setBookList} />
+     
 
     </>
 

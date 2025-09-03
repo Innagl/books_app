@@ -65,16 +65,26 @@ input {
     padding: 0px 16px;
 }
 
-.book-container {
+.fact-container {
+    display: flex;
+    gap: 24px;
     background-color: black;
     padding: 24px;
     border-radius: 24px;
+    width: 60vw;
 }
 
 .image-fact {
     width: 10vw;
     width: 20vh;
 }
+
+.image-text {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-bottom: 16px;
+    }
 
 .text-icon {
     display: flex;
