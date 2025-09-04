@@ -47,6 +47,7 @@
     width: 6vw;
     height: 12vh;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 svg {
@@ -76,10 +77,12 @@ svg {
     justify-content: center;
     align-items: flex-start;
     margin: 0px 8px 16px;
+    padding: 16px;
     gap: 16px;
     background-color: #242727;
     width: 50vw;
     max-width: 100%;
+    border-radius: 8px;
 }
 
 

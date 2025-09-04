@@ -1,4 +1,4 @@
-export const data = [
+export const slidesData = [
 
   {
 
@@ -25,6 +25,7 @@ export const data = [
     image: "/images/god.jpg"
 
   },
+
 
   {
 
@@ -61,5 +62,6 @@ export const data = [
     image: "/images/generation.jpg"
 
   }
+
 
 ]

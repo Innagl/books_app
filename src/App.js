@@ -42,14 +42,13 @@ function App() {
 
 
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/favourites" element={<Favourites />} />
+          <Route path="/" element={<HomePage bookList={bookList} setBookList={setBookList}/>} />
+          <Route path="/favourites" element={<Favourites bookList={bookList}/>} />
           <Route path="/DidYouKnow" element={<DidYouKnow />} />
         </Routes>
       </Router>
 
-     
-
+    
     </>
 
   )

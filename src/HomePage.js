@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import BooksComponent from './BooksComponent';
 
 
-function HomePage(bookList, setBookList) {
+function HomePage({bookList, setBookList}) {
 
   const [myBooks, setMyBooks] = useState([]);
   const [wordSubmitted, setWordSubmitted] = useState('');

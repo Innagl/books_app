@@ -1,52 +1,54 @@
-import { data } from "./Data";
+import { slidesData } from "./SlidesData";
 import { useState } from "react";
 
 const Slides = () => {
-  const [person, setPerson] = useState(0)
-  const { id, name, author, age, image } = data[person];
-  console.log(data[person])
+  const [yearBook, setYearBook] = useState(0)
+  const { id, name, author, age, image } = slidesData[yearBook];
+  console.log(slidesData[yearBook])
 
 
-  const previousPerson = () => {
-    setPerson((person => {
-      person--;
+  const previousYearBook = () => {
+    setYearBook((yearBook => {
+      yearBook--;
 
-      if (person < 0) {
-        return data.length - 1;
+      if (yearBook < 0) {
+        return slidesData.length - 1;
       }
-      return person;
+      return yearBook;
     }))
   }
 
-  const nextPerson = () => {
-    setPerson((person => {
-      person++;
-      if (person > data.length - 1) {
-        person = 0;
+  const nextYearBook = () => {
+    setYearBook((yearBook => {
+      yearBook++;
+      if (yearBook > slidesData.length - 1) {
+        yearBook = 0;
       }
-      return person;
+      return yearBook;
     }))
   }
 
 
   return (<div className="slides-container">
 
-    <div className="titleAndArrows">
-      <h1>Top Books Loved by Readers in 2024</h1>
+
+    <h1>Top Books Loved by Readers in 2024</h1>
+    <div className="slides-wrapper">
+      <div className="text-slide">
+        <h2> {name}</h2>
+        <h3>{author}</h3>
+      </div>
 
       <div className="btn-slides">
-        <button className="stroke-btn" onClick={previousPerson}>Previous</button>
+        <button className="stroke-btn" onClick={previousYearBook}>Previous</button>
         <div>
-          <div >
-            <h1>{id} - {name}</h1>
-            <h2>{author}</h2>
-          </div>
 
-          <div >
+
+          <div className="image-slide">
             <img className="books-loved" src={image} alt="book" />
           </div>
         </div>
-        <button className="stroke-btn" onClick={nextPerson}>Next</button>
+        <button className="stroke-btn" onClick={nextYearBook}>Next</button>
 
       </div>
     </div>
