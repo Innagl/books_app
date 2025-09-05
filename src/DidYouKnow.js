@@ -6,7 +6,7 @@ const DidYouKnow = () => {
     return (
         <div >
 
-    
+    <h2 className="page-title">Interesting Facts About Authors</h2>
             <Accordion />
         </div>
     )
