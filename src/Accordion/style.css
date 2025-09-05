@@ -1,13 +1,44 @@
 /* STEP 5 */
+
 .accordion {
+    background-image: url("/public/images/books-bg.png");
+    background-size: cover;
+    /* makes it fill the screen */
+    background-color: rgba(24, 26, 26, 0.35);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    /* avoids tiling */
+    background-position: center;
+    min-height: 100vh;
+    /* full screen height */
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    margin-top: 32px;
     margin-bottom: 32px;
 }
+
+.secondary-text {
+    color: #C4CCCC;
+}
+
+.title-4,
+.body-text-16 {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.title-4 {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.body-text-16 {
+    font-size: 16px;
+    line-height: 24px;
+}
+
 
 .default,
 .active,
@@ -16,9 +47,8 @@
     align-items: center;
     box-sizing: border-box;
     gap: 16px;
-    width: 30vw; 
+    width: 30vw;
     /* width: 100%; */
-    
 
 }
 
@@ -28,7 +58,7 @@
 }
 
 .default {
-     padding: 20px 0px 0px 32px;
+    padding: 20px 0px 0px 32px;
     cursor: pointer;
 }
 
@@ -37,17 +67,18 @@
     padding: 12px 0px 12px 32px;
     font-size: 16px;
     line-height: 24px;
-    color: #696969;
     text-align: left;
     width: 30vw;
-    
+
 }
 
 .image-accordion {
-    width: 6vw;
-    height: 12vh;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 50%;
+    margin-top: 16px;
+    border: solid 1px #CDE7BE;
 }
 
 svg {
@@ -60,7 +91,7 @@ svg {
     flex-direction: row;
     align-items: center;
     gap: 24px;
-  
+
 }
 
 /* .accordion-container {
@@ -71,23 +102,22 @@ svg {
     width: 100%;
 } */
 
-.image-accordion-container {
+.image-content-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     margin: 0px 8px 16px;
     padding: 16px;
     gap: 16px;
     background-color: #242727;
     width: 50vw;
     max-width: 100%;
-    border-radius: 8px;
+    border-radius: 16px;
 }
 
 
 .author {
-    font-size: 18px;
     font-weight: bold;
     white-space: nowrap;
     width: 28vw;

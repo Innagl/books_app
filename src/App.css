@@ -1,20 +1,87 @@
 body {
-    background-color: #181A1A;
     color: #ffffff;
+     background-image: url("/public/images/library.png");
+    background-size: cover;
+    /* makes it fill the screen */
+    background-color: rgba(24, 26, 26, 0.8);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    /* avoids tiling */
+    background-position: center;
+    min-height: 100vh;
 }
 
-h1, h2, h3 {
+
+h1,
+h2,
+h3,
+.title-4,
+.body-text-18,
+.body-text-16,
+p {
     font-family: "Inter", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     margin: 0px;
+
+}
+
+h1,
+h2,
+h3,
+.title-4,
+.body-text-18 {
+    color: #EAF4F4;
+}
+
+span {
+    color: #CDE7BE;
+    margin-bottom: 16px;
+}
+
+.body-text-16, .body-text-14 {
+    color: #989f9f;
 }
 
 h1 {
     font-size: 48px;
     line-height: 56px;
-    color: #FFFFFF;
-    margin: 0px;
 }
+
+h2 {
+    font-size: 30px;
+    line-height: 44px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.title-4 {
+    font-size: 28px;
+    line-height: 28px;
+}
+
+
+.body-text-18 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.body-text-16 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.body-text-14 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
 
 nav {
     display: flex;
@@ -27,24 +94,72 @@ nav {
     padding: 16px;
     text-decoration: none;
     font-size: 18px;
-    color: #191512;
-    font-family: "Inter", sans-serif;
+    color: #ffffff;
+    /* white by default */
+    transition: color 0.3s ease;
+}
+
+.item:hover {
+    color: #CDE7BE;
+    /* green */
+}
+
+.active-nav {
+    color: #CDE7BE;
+    /* green */
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
 }
 
 .start {
     margin-right: auto;
-
+    width: 56px;
+    height: 56px;
+    padding: 0;
 }
 
+.start path {
+    transform: scale(1.2);
+    transform-origin: center;
+}
 
 .search-books-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 56px 0px 48px 0px;
 
 }
 
+.container-books-founded {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    /* space between cards */
+    padding-left: 48px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 16vw;
+    /* fixed card width */
+    text-align: center;
+    background-color: #222;
+    /* optional for contrast */
+    padding: 16px 12px;
+    gap: 12px;
+    border-radius: 12px;
+    border: solid 1px #595c5c;
+}
+
+
+.description-text {
+    margin-top: 8px;
+}
 
 .slides-container {
     display: flex;
@@ -61,10 +176,6 @@ nav {
     gap: 2vw;
 }
 
-.link {
-    color: #ffffff;
-}
-
 input {
     display: flex;
     justify-content: center;
@@ -76,6 +187,27 @@ input {
     height: 48px;
     font-size: 18px;
     padding: 0px 16px;
+    margin-bottom: 56px;
+}
+
+input:hover {
+    border: solid 1px #CDE7BE;
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+    outline: 5px solid rgba(205, 231, 190, 0.35);
+    /* custom focus border */
+    outline-offset: 2px;
+}
+
+.book-author {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0px;
+  height: 8vh;
 }
 
 .fact-container {
@@ -97,7 +229,7 @@ input {
     flex-direction: row;
     gap: 24px;
     margin-bottom: 16px;
-    }
+}
 
 .text-icon {
     display: flex;
@@ -113,32 +245,80 @@ button {
 }
 
 .filled-btn {
-    background-color: #CDE7BE;
+    background-color: rgb(205, 231, 190);
     color: #181A1A;
+}
+
+.filled-btn:hover {
+    background-color: #B2DA9A;
+    color: #181A1A;
+    cursor: pointer;
 }
 
 .stroke-btn {
     border: solid 1px #CDE7BE;
     background-color: #181A1A;
     color: #CDE7BE;
-    width: 72px;
+    padding: 0px;
+      font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
 }
+
+.stroke-btn:hover {
+    background-color: #CDE7BE;
+    color: #181A1A;
+    cursor: pointer;
+}
+
+.stroke-btn:disabled {
+    background-color: grey;   /* grey background for disabled */
+    color: #ccc;              /* lighter text to show it's disabled */
+    border: 1px solid #888;   /* optional: dull border */
+    cursor: not-allowed;      /* show forbidden cursor */
+    opacity: 0.6;             /* optional: slightly transparent */
+}
+
+
 
 form {
     display: flex;
     flex-direction: row;
     gap: 16px;
+    margin: 56px 0px 32px 0px;
 }
+
+.book-image {
+    width: 60%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book-founded-title {
+  display: -webkit-box;          /* enables flexbox for truncation */
+  -webkit-box-orient: vertical;  /* set vertical orientation */
+  -webkit-line-clamp: 2;         /* number of lines */
+  overflow: hidden;              /* hide extra text */
+  text-overflow: ellipsis;       /* add "..." */
+  font-size: 16px;               /* optional */
+  line-height: 1.4;              /* optional: better spacing */
+  max-height: calc(1.4em * 2);   /* ensures it fits 2 lines */
+}
+
 
 .books-loved {
     width: 20vw;
+    height: 50vh;
+    object-fit: cover;
 }
 
 .image-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-     width: 20vw;
+    width: 20vw;
+
 }
 
 .slides-wrapper {
@@ -158,4 +338,48 @@ form {
     gap: 8px;
     text-align: center;
     width: 40vw;
+}
+
+/* //Favourites */
+.favourites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin: 48px auto;
+  padding: 24px;
+  width: 60vw;
+  background-color: #222; /* dark card background */
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.favourites h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #EAF4F4; /* same as other headings */
+  margin-bottom: 16px;
+}
+
+.favourites ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.favourites li {
+  display: flex;
+  align-items: center;   /* вирівняє картинку і текст по вертикалі */
+  justify-content: flex-start; /* вирівнює вліво */
+  gap: 16px;             /* відстань між картинкою та текстом */
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background-color: #313333; /* slightly lighter than #222 */
+  color: #CDE7BE;
+  transition: background-color 0.3s ease;
 }

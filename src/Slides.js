@@ -32,11 +32,11 @@ const Slides = () => {
   return (<div className="slides-container">
 
 
-    <h1>Top Books Loved by Readers in 2024</h1>
+    <h2>Top books loved by readers in 2024</h2>
     <div className="slides-wrapper">
       <div className="text-slide">
-        <h2> {name}</h2>
-        <h3>{author}</h3>
+        <h3> {name}</h3>
+        <p className="body-text-16">By: {author}</p>
       </div>
 
       <div className="btn-slides">

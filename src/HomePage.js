@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import BooksComponent from './BooksComponent';
 
 
-function HomePage({bookList, setBookList}) {
+function HomePage({ bookList, setBookList }) {
 
   const [myBooks, setMyBooks] = useState([]);
   const [wordSubmitted, setWordSubmitted] = useState('');
@@ -57,63 +57,68 @@ function HomePage({bookList, setBookList}) {
   }
 
   // ПОДШАГ ШАГА 8
-const addItemToFavourite = (book) => {
-  // prevent duplicates
-  //if (bookList.filter((aBookInTheFavoriteArray) => aBookInTheFavoriteArray.id === book.id).length === 0) {
+  const addItemToFavourite = (book) => {
+    // prevent duplicates
+    //if (bookList.filter((aBookInTheFavoriteArray) => aBookInTheFavoriteArray.id === book.id).length === 0) {
     setBookList([...bookList, book]);
     console.log(" favorite Added:", book.volumeInfo.title);
-  //}
-};
+    //}
+  };
 
 
 
 
-//Подшаг 2 шага 10
-// const crossedWord = (event) => {
-//   const li = event.target;
-//   li.classList.toggle('crossed');
-// }
+  //Подшаг 2 шага 10
+  // const crossedWord = (event) => {
+  //   const li = event.target;
+  //   li.classList.toggle('crossed');
+  // }
 
-//Подашаг 2 шага 13
-// const deleteItem = () => {
-//   let listArray = bookList;
-//   listArray = [];
-//   setBookList({listArray})
-// }
+  //Подашаг 2 шага 13
+  // const deleteItem = () => {
+  //   let listArray = bookList;
+  //   listArray = [];
+  //   setBookList({listArray})
+  // }
 
 
   return (<div>
     {/* {stateLoader && <LoaderPage />} */}
 
     <div className='search-books-wrapper'>
-      <h1>Book Finder</h1>
+
+      <h1>Book <span>Finder</span></h1>
+      <p className="description-text body-text-16" >Search for your favorite books by title or author.</p>
 
 
-      <p className="description-text">Search for your favorite books by title or author.</p>
+
       <form onSubmit={finalSearch}>
         <input
-          className="inputField"
           onChange={bookSearch}
           value={mySearch}
           placeholder="Search for books..."
         />
-        <button  className="filled-btn" onClick={finalSearch}>SEARCH</button>
+        <button className="filled-btn" onClick={finalSearch}>SEARCH</button>
       </form>
 
       {/* render books */}
 
-      <p></p>
-      {myBooks.map((book) => (
-        <BooksComponent
-          key={book.id}
-          image={book.volumeInfo.imageLinks?.thumbnail}
-          title={book.volumeInfo.title}
-          author={book.volumeInfo.authors?.join(", ")}
-          publishedDate={book.volumeInfo.publishedDate}
-          onAdd={() => addItemToFavourite(book)}
-          
-        />
-      ))}
+<div className='container-books-founded'>
+  {myBooks.map((book) => {
+      const isFavourite = bookList.some((fav) => fav.id === book.id);
+    return (
+    <BooksComponent
+      key={book.id}
+      image={book.volumeInfo.imageLinks?.thumbnail}
+      title={book.volumeInfo.title}
+      author={book.volumeInfo.authors?.join(", ")}
+      onAdd={() => addItemToFavourite(book)}
+      isFavourite={isFavourite}
+    />
+    );
+})}
+</div>
+
     </div>
 
     {/* FAVOURITES */}
@@ -131,7 +136,7 @@ const addItemToFavourite = (book) => {
     {/* <div className="container">
       <button onClick={() => deleteItem()} className="btn delete">Delete</button>
     </div> */}
-      <Slides /> 
+    <Slides />
   </div>
 
   );
