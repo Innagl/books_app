@@ -30,11 +30,15 @@ export const AccordionItem = ({ image, author, content }) => {
                         <div className="author-icon">
                             <div className="author title-4">{author}</div>
                             {isOpen ? (
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <svg className="icon" xmlns="http://www.w3.org/2000/svg" 
+                                width="24" 
+                                height="24" 
+                                viewBox="0 0 24 24" 
+                                fill="none">
                                     <path fillRule="evenodd" clipRule="evenodd" d="M2.08515 17.2635C2.92104 18.183 4.34405 18.2508 5.26353 17.4149L12 11.2908L18.7365 17.4149C19.656 18.2508 21.079 18.183 21.9149 17.2635C22.7508 16.344 22.683 14.921 21.7635 14.0851L13.5135 6.58514C12.6553 5.80495 11.3447 5.80495 10.4865 6.58514L2.2365 14.0851C1.31702 14.921 1.24926 16.344 2.08515 17.2635Z" fill="#CDE7BE" />
                                 </svg>
                             ) : (
-                                <svg xmlns="http://www.w3.org/2000/svg"
+                                <svg className="icon" xmlns="http://www.w3.org/2000/svg"
                                     width="24"
                                     height="24"
                                     viewBox="0 0 24 24" fill="none">

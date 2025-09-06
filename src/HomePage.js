@@ -7,7 +7,9 @@ import BooksComponent from './BooksComponent';
 
 function HomePage({ bookList, setBookList }) {
 
-  const [myBooks, setMyBooks] = useState([]);
+  const [myBooks, setMyBooks] = useState(
+    localStorage.getItem("myBooks") ? JSON.parse(localStorage.getItem("myBooks")) : []
+  );
   const [wordSubmitted, setWordSubmitted] = useState('');
   const [mySearch, setMySearch] = useState("");
 
@@ -56,13 +58,13 @@ function HomePage({ bookList, setBookList }) {
     setWordSubmitted(mySearch)
   }
 
-  // ПОДШАГ ШАГА 8
+  useEffect(() => {
+    localStorage.setItem("myBooks", JSON.stringify(bookList));
+  }, [bookList]);
+
   const addItemToFavourite = (book) => {
-    // prevent duplicates
-    //if (bookList.filter((aBookInTheFavoriteArray) => aBookInTheFavoriteArray.id === book.id).length === 0) {
     setBookList([...bookList, book]);
     console.log(" favorite Added:", book.volumeInfo.title);
-    //}
   };
 
 
@@ -109,9 +111,9 @@ function HomePage({ bookList, setBookList }) {
     return (
     <BooksComponent
       key={book.id}
-      image={book.volumeInfo.imageLinks?.thumbnail}
-      title={book.volumeInfo.title}
-      author={book.volumeInfo.authors?.join(", ")}
+      image={book.volumeInfo.imageLinks?.thumbnail || "image_not_available.png"}
+      title={book.volumeInfo.title || "Untitled"}
+      author={book.volumeInfo.authors?.join(", ") || "Unknown Author" }
       onAdd={() => addItemToFavourite(book)}
       isFavourite={isFavourite}
     />
