@@ -1,12 +1,10 @@
 body {
     color: #ffffff;
-     background-image: url("/public/images/library.png");
+    background-image: url("/public/images/library.png");
     background-size: cover;
-    /* makes it fill the screen */
     background-color: rgba(24, 26, 26, 0.8);
     background-blend-mode: darken;
     background-repeat: no-repeat;
-    /* avoids tiling */
     background-position: center;
     min-height: 100vh;
 }
@@ -38,13 +36,15 @@ span {
     margin-bottom: 16px;
 }
 
-.body-text-16, .body-text-14 {
+.body-text-16,
+.body-text-14 {
     color: #989f9f;
 }
 
 h1 {
-    font-size: 48px;
-    line-height: 56px;
+    font-size: 60px;
+    line-height: 72px;
+    font-weight: 600;
 }
 
 h2 {
@@ -91,17 +91,23 @@ nav {
 }
 
 .item {
-    padding: 16px;
+    padding: 16px 8px;
     text-decoration: none;
     font-size: 18px;
     color: #ffffff;
-    /* white by default */
     transition: color 0.3s ease;
 }
 
 .item:hover {
     color: #CDE7BE;
     /* green */
+}
+
+
+svg {
+    width: 48px;
+    height: 48px;
+    aspect-ratio: 1/1;
 }
 
 .active-nav {
@@ -114,15 +120,12 @@ nav {
 
 .start {
     margin-right: auto;
-    width: 56px;
-    height: 56px;
-    padding: 0;
+    width: 48px;
+    height: 48px;
+    padding: 0px;
+    display: block;
 }
 
-.start path {
-    transform: scale(1.2);
-    transform-origin: center;
-}
 
 .search-books-wrapper {
     display: flex;
@@ -137,7 +140,6 @@ nav {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    /* space between cards */
     padding-left: 48px;
 }
 
@@ -146,10 +148,8 @@ nav {
     flex-direction: column;
     align-items: center;
     width: 16vw;
-    /* fixed card width */
     text-align: center;
     background-color: #222;
-    /* optional for contrast */
     padding: 16px 12px;
     gap: 12px;
     border-radius: 12px;
@@ -170,6 +170,7 @@ nav {
 
 .btn-slides {
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -198,16 +199,13 @@ input:hover {
 input:focus {
     outline: none;
     outline: 5px solid rgba(205, 231, 190, 0.35);
-    /* custom focus border */
     outline-offset: 2px;
 }
 
 .book-author {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin: 8px 0px;
-  height: 8vh;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .fact-container {
@@ -240,8 +238,10 @@ input:focus {
 
 button {
     height: 50px;
-    width: 10vw;
     border-radius: 8px;
+    min-width: 120px;
+    max-width: 200px;
+    width: auto;
 }
 
 .filled-btn {
@@ -259,8 +259,8 @@ button {
     border: solid 1px #CDE7BE;
     background-color: #181A1A;
     color: #CDE7BE;
-    padding: 0px;
-      font-family: "Inter", sans-serif;
+    padding: 0px 8px;
+    font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 16px;
 }
@@ -272,14 +272,12 @@ button {
 }
 
 .stroke-btn:disabled {
-    background-color: grey;   /* grey background for disabled */
-    color: #ccc;              /* lighter text to show it's disabled */
-    border: 1px solid #888;   /* optional: dull border */
-    cursor: not-allowed;      /* show forbidden cursor */
-    opacity: 0.6;             /* optional: slightly transparent */
+    background-color: grey;
+    color: #ccc;
+    border: 1px solid #888;
+    cursor: not-allowed;
+    opacity: 0.6;
 }
-
-
 
 form {
     display: flex;
@@ -296,14 +294,14 @@ form {
 }
 
 .book-founded-title {
-  display: -webkit-box;          /* enables flexbox for truncation */
-  -webkit-box-orient: vertical;  /* set vertical orientation */
-  -webkit-line-clamp: 2;         /* number of lines */
-  overflow: hidden;              /* hide extra text */
-  text-overflow: ellipsis;       /* add "..." */
-  font-size: 16px;               /* optional */
-  line-height: 1.4;              /* optional: better spacing */
-  max-height: calc(1.4em * 2);   /* ensures it fits 2 lines */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    line-height: 1.4;
+    max-height: calc(1.4em * 2);
 }
 
 
@@ -318,7 +316,6 @@ form {
     justify-content: center;
     align-items: center;
     width: 20vw;
-
 }
 
 .slides-wrapper {
@@ -340,46 +337,360 @@ form {
     width: 40vw;
 }
 
-/* //Favourites */
-.favourites {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  margin: 48px auto;
-  padding: 24px;
-  width: 60vw;
-  background-color: #222; /* dark card background */
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+.image-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* This pushes the delete button to the right */
+    width: 100%;
+    /* Ensure it takes full width of its parent */
 }
 
+.page-title {
+    text-align: center;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    background-color: none;
+}
+
+.favourites {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 48px auto;
+    padding: 24px;
+    width: 60vw;
+}
+
+
 .favourites h2 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #EAF4F4; /* same as other headings */
-  margin-bottom: 16px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #EAF4F4;
+    margin-bottom: 16px;
 }
 
 .favourites ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
 .favourites li {
-  display: flex;
-  align-items: center;   /* вирівняє картинку і текст по вертикалі */
-  justify-content: flex-start; /* вирівнює вліво */
-  gap: 16px;             /* відстань між картинкою та текстом */
-  font-family: "Inter", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  padding: 12px 16px;
-  margin-bottom: 8px;
-  border-radius: 8px;
-  background-color: #313333; /* slightly lighter than #222 */
-  color: #CDE7BE;
-  transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background-color: #313333;
+    color: #CDE7BE;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Add this line to ensure it fills the parent container */
+    box-sizing: border-box; /* Add this to include padding in the width calculation */
+}
+
+.book-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+@media (max-width: 1024px) {
+
+    form {
+        flex-direction: column;
+        /* stack input + button */
+        width: 80vw;
+        max-width: 400px;
+        margin: 24px auto;
+        gap: 12px;
+    }
+
+    form input,
+    form button {
+        width: 100%;
+        /* take full form width */
+        max-width: 100%;
+        /* override global max-width */
+        box-sizing: border-box;
+    }
+
+    input {
+        width: 50vw;
+        margin-bottom: 4px;
+    }
+
+    .search-books-wrapper {
+        margin: 32px 0px 24px 0px;
+    }
+
+    .container-books-founded {
+        justify-content: center;
+        padding-left: 0;
+        gap: 16px;
+    }
+
+    .book-card {
+        width: 80vw;
+        max-width: 320px;
+    }
+
+    .book-card button {
+        width: 100%;
+        max-width: 280px;
+        height: 48px;
+        font-size: 16px;
+    }
+
+    .book-image {
+        width: 50%;
+        height: 50%;
+    }
+
+    .slides-wrapper {
+        width: 100%;
+    }
+
+    .books-loved {
+        width: 40vw;
+        height: 30vh;
+    }
+
+    /* .btn-slides {
+        width: 40%;
+        gap: 16vw;
+    } */
+
+    .btn-slides {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn-slides button {
+        width: 100%;
+        max-width: 280px;
+    }
+
+
+}
+
+@media (max-width: 860px) {
+     .favourites li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 16px;
+        text-align: center;
+    }
+
+     .favourites li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .book-info {
+        flex-direction: column;
+        /* Stack the image and book info */
+        gap: 8px;
+        /* Reduce the gap for a tighter feel */
+    }
+}
+
+    .image-fact {
+        width: 40vw;
+        height: 30vh;
+    }
+
+    .image-text {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .text-icon {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+@media (max-width: 480px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .start {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+
+    nav-items {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-items::-webkit-scrollbar {
+        display: none;
+    }
+
+    .item {
+        font-size: 13px;
+        white-space: nowrap;
+        flex-shrink: 0;
+        text-align: center;
+        min-width: fit-content;
+    }
+
+    form {
+        flex-direction: column;
+        /* stack items vertically */
+        width: 90vw;
+        /* take almost full width */
+        max-width: 90%;
+        /* prevent overflow */
+        margin: 24px auto;
+        /* center it */
+        gap: 12px;
+        /* smaller spacing */
+    }
+
+    form input,
+    form button {
+        width: 100%;
+        /* force same width */
+        box-sizing: border-box;
+        /* include padding/border in width */
+    }
+
+    .accordion {
+        padding-top: 0;
+    }
+
+    .default,
+    .active,
+    .content {
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .image-content-container {
+        display: flex;
+        /* Use flexbox for the sub-container */
+        flex-direction: column;
+        /* Stack the image and book info vertically */
+        align-items: center;
+        gap: 12px;
+    }
+
+    .book-author {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        /* Center the title and author text */
+        text-align: center;
+        /* Remove the height constraint to allow content to grow */
+        /* height: 8vh; */
+    }
+
+    .image-accordion {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 16px;
+    }
+
+    .author {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        width: auto;
+        white-space: normal;
+    }
+
+    .title-4 {
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    .body-text-16 {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .book-card {
+        width: 80vw;
+        max-width: 360px;
+    }
+
+    .container-books-founded {
+        gap: 16px;
+    }
+
+    .slides-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    .btn-slides {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .btn-slides button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .favourites li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .book-info {
+        flex-direction: column;
+        /* Stack the image and book info */
+        gap: 8px;
+        /* Reduce the gap for a tighter feel */
+    }
+
 }

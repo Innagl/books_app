@@ -70,18 +70,7 @@ function HomePage({ bookList, setBookList }) {
 
 
 
-  //Подшаг 2 шага 10
-  // const crossedWord = (event) => {
-  //   const li = event.target;
-  //   li.classList.toggle('crossed');
-  // }
 
-  //Подашаг 2 шага 13
-  // const deleteItem = () => {
-  //   let listArray = bookList;
-  //   listArray = [];
-  //   setBookList({listArray})
-  // }
 
 
   return (<div>
@@ -90,7 +79,7 @@ function HomePage({ bookList, setBookList }) {
     <div className='search-books-wrapper'>
 
       <h1>Book <span>Finder</span></h1>
-      <p className="description-text body-text-16" >Search for your favorite books by title or author.</p>
+      <p className="description-text body-text-16" >Search for your favorite books by title.</p>
 
 
 
@@ -103,50 +92,29 @@ function HomePage({ bookList, setBookList }) {
         <button className="filled-btn" onClick={finalSearch}>SEARCH</button>
       </form>
 
-      {/* render books */}
-
-<div className='container-books-founded'>
-  {myBooks.map((book) => {
-      const isFavourite = bookList.some((fav) => fav.id === book.id);
-    return (
-    <BooksComponent
-      key={book.id}
-      image={book.volumeInfo.imageLinks?.thumbnail || "image_not_available.png"}
-      title={book.volumeInfo.title || "Untitled"}
-      author={book.volumeInfo.authors?.join(", ") || "Unknown Author" }
-      onAdd={() => addItemToFavourite(book)}
-      isFavourite={isFavourite}
-    />
-    );
-})}
-</div>
+      <div className='container-books-founded'>
+        {myBooks.map((book) => {
+          const isFavourite = bookList.some((fav) => fav.id === book.id);
+          return (
+            <BooksComponent
+              key={book.id}
+              image={book.volumeInfo.imageLinks?.thumbnail || "image_not_available.png"}
+              title={book.volumeInfo.title || "Untitled"}
+              author={book.volumeInfo.authors?.join(", ") || "Unknown Author"}
+              onAdd={() => addItemToFavourite(book)}
+              isFavourite={isFavourite}
+            />
+          );
+        })}
+      </div>
 
     </div>
 
-    {/* FAVOURITES */}
-    {/* <div className="container">
-      <button onClick={() => addItem(setBookList)} className="btn add">ADD</button>
-    </div> */}
-
-    {/* <ul>
-      {bookList.map((item, index) => (
-        <li onClick={crossedWord} key={index}>
-          {item}</li>
-      ))}
-    </ul> */}
-
-    {/* <div className="container">
-      <button onClick={() => deleteItem()} className="btn delete">Delete</button>
-    </div> */}
     <Slides />
   </div>
 
   );
-
-
-
 }
-
 
 export default HomePage;
 

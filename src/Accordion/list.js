@@ -1,8 +1,3 @@
-
-
-// Лист приравниваем к массиву который состоит из 3 обьектов
-// 1 - тайтл
-// 2 - content
 export const list = [
 
     {
@@ -40,7 +35,6 @@ export const list = [
         author: "Franz Kafka",
         content: "Worked as an insurance clerk by day and wrote his surreal fiction at night. Asked for all his unpublished manuscripts to be burned after his death—fortunately, his friend Max Brod ignored him, preserving classics like The Trial. Was extremely shy and rarely read his work aloud in public."
     },
-
 
 
     {

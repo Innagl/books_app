@@ -1,15 +1,6 @@
-//Подшаг 2 STEP 6
-
 function BooksComponent({ id, title, author, publishedDate, image, onAdd, isFavourite }) {
 
-    //Подшаг 1 STEP 7
-    //Отображаем характеристики рецептов
-    {/* label - recepi name
-        calories
-        image */}
-
     return (
-
         <div className="book-card" >
             <img className="book-image" src={image} alt="book" />
             <div className="book-author">

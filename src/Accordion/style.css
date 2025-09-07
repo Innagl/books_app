@@ -139,61 +139,7 @@ svg {
     width: 28vw;
 }
 
-/* MOB */
-/* ✅ Base Styles (Desktop-first) – keep as you have */
-.accordion {
-  background-image: url("/public/images/books-bg.png");
-  background-size: cover;
-  background-color: rgba(24, 26, 26, 0.35);
-  background-blend-mode: darken;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-  padding-top: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-}
 
-.default,
-.active,
-.content {
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  gap: 16px;
-  width: 30vw; /* Desktop width */
-}
-
-.content {
-  padding: 12px 0px 12px 32px;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: left;
-  width: 30vw;
-}
-
-.image-content-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 8px 16px;
-  padding: 16px;
-  gap: 16px;
-  background-color: #242727;
-  width: 50vw; /* Desktop width */
-  max-width: 100%;
-  border-radius: 16px;
-}
-
-.author {
-  font-weight: bold;
-  white-space: nowrap;
-  width: 28vw;
-}
 
 /* ✅ RESPONSIVENESS */
 @media (max-width: 1024px) {
