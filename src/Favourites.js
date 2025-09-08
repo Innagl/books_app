@@ -11,7 +11,7 @@ const Favourites = ({ bookList, setBookList }) => {
       <ul>
         {bookList.length > 0 ? (
           bookList.map((book) => (
-            <li key={book.id} className="image-content-container">
+            <li key={book.id} className="favourite-card">
               <div className="book-info">
               <img
                 src={book.volumeInfo.imageLinks?.thumbnail}

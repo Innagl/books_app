@@ -10,7 +10,7 @@ export const Accordion = () => {
       <h2 className="page-title">Interesting facts about authors</h2>
     </div>
     {list.map((item, index) =>
-      <AccordionItem key={index} image={item.image} author={item.author} content={item.content} />
+      <AccordionItem key={index} image={item.image} country={item.country} sold={item.sold} author={item.author} content={item.content} />
     )}
 
 

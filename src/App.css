@@ -337,7 +337,7 @@ form {
     width: 40vw;
 }
 
-.image-content-container {
+.favourite-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -591,23 +591,25 @@ form {
     .default,
     .active,
     .content {
-        width: 100vw;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 16px;
-        padding: 16px;
-        box-sizing: border-box;
+       
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 8px !important;
+        box-sizing: border-box !important;
     }
 
-    .image-content-container {
-        display: flex;
+    .favourite-card {
+        display: flex !important;
         /* Use flexbox for the sub-container */
-        flex-direction: column;
+        flex-direction: column !important;
         /* Stack the image and book info vertically */
-        align-items: center;
-        gap: 12px;
+        align-items: center !important;
+        gap: 12px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
     }
 
     .book-author {
@@ -622,13 +624,13 @@ form {
     }
 
     .image-accordion {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 16px;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 8px;
     }
 
     .author {
-        font-size: 16px;
+        font-size: 13px;
         font-weight: bold;
         text-align: center;
         width: auto;
@@ -636,14 +638,14 @@ form {
     }
 
     .title-4 {
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 18px;
         text-align: center;
     }
 
     .body-text-16 {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 12px;
+        line-height: 16px;
         text-align: center;
     }
 
