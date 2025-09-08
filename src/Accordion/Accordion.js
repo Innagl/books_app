@@ -1,5 +1,3 @@
-//STEP 3
-
 import { AccordionItem } from "./AccordionItem"
 import { list } from "./list"
 import './style.css'
@@ -12,8 +10,6 @@ export const Accordion = () => {
     {list.map((item, index) =>
       <AccordionItem key={index} image={item.image} country={item.country} sold={item.sold} author={item.author} content={item.content} />
     )}
-
-
   </div>
   )
 }

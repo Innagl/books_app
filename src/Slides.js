@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const Slides = () => {
   const [yearBook, setYearBook] = useState(0)
-  const { id, name, author, age, image } = slidesData[yearBook];
+  const { name, author, image } = slidesData[yearBook];
   console.log(slidesData[yearBook])
 
 
@@ -31,19 +31,15 @@ const Slides = () => {
 
   return (<div className="slides-container">
 
-
     <h2>Top books loved by readers in 2024</h2>
     <div className="slides-wrapper">
       <div className="text-slide">
         <h3> {name}</h3>
         <p className="body-text-16">By: {author}</p>
       </div>
-
       <div className="btn-slides">
         <button className="stroke-btn" onClick={previousYearBook}>Previous</button>
         <div>
-
-
           <div className="image-slide">
             <img className="books-loved" src={image} alt="book" />
           </div>
@@ -52,12 +48,8 @@ const Slides = () => {
 
       </div>
     </div>
-
-
-
   </div>
   )
-
 }
 
 

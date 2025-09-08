@@ -1,13 +1,9 @@
-/* STEP 5 */
-
 .accordion {
   background-image: url("/public/images/books-bg.png");
   background-size: cover;
-  /* makes it fill the screen */
   background-color: rgba(24, 26, 26, 0.35);
   background-blend-mode: darken;
   background-repeat: no-repeat;
-  /* avoids tiling */
   background-position: center top;
   background-attachment: fixed;
   min-height: 100vh;
@@ -54,7 +50,6 @@
   color: #7E9073;
 }
 
-
 .default,
 .active,
 .content {
@@ -67,13 +62,8 @@
   min-width: 280px;
 }
 
-.active {
-  padding: 20px 0px 0px 32px;
-  cursor: pointer;
-}
-
-.default {
-  padding: 20px 0px 0px 32px;
+.active, .default{ 
+ padding: 20px 0px 0px 32px;
   cursor: pointer;
 }
 
@@ -97,12 +87,10 @@
   border: solid 4px #FACC70;
 }
 
-
-
 .icon {
   display: flex;
   padding: 4px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 24px;
   height: 24px;
@@ -110,7 +98,6 @@
   background: #CDE7BE;
   flex-shrink: 0;
 }
-
 
 .icon:hover {
   background: #7e9073;
@@ -129,44 +116,33 @@
   max-width: 100%;
 }
 
-.author-icon > div:first-child {
+.author-icon>div:first-child {
   flex: 1;
   min-width: 0;
   overflow: hidden;
 }
 
-
-/* .accordion-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-} */
-
 .image-content-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0px 8px 16px;
   padding: 16px;
   gap: 16px;
-  /* background-color: #242727; */
   background-color: #181A1A;
   width: 50vw;
-  max-width: 600px;
+  max-width: 700px;
   min-width: 300px;
   border-radius: 16px;
   transition: all 0.3s ease;
 }
 
-.image-content-container > div {
+.image-content-container>div {
   flex: 1;
   min-width: 0;
   max-width: 100%;
 }
-
 
 .author {
   font-weight: bold;
@@ -193,119 +169,9 @@
 }
 
 .author-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 4px;
-  max-width: calc(100% - 50px);
-}
-
-
-
-/* Ã¢Å“â€¦ MOBILE RESPONSIVENESS FOR DIDYOUKNOW */
-
-/* Large desktop screens */
-@media (min-width: 1001px) {
-  .author-icon {
-    max-width: 100%;
-  }
-  
-  .author {
-    max-width: calc(100% - 50px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .icon {
-    flex-shrink: 0;
-    max-width: 24px;
-    max-height: 24px;
-  }
-  
-  .content {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-  }
-}
-
-/* Large desktop screens (1600-1920px) */
-@media (min-width: 1600px) and (max-width: 1919px) {
-  .default,
-  .active,
-  .content {
-    width: 35vw;
-    max-width: 550px;
-  }
-  
-  .image-content-container {
-    width: 45vw;
-    max-width: 700px;
-  }
-  
-  .author-icon {
-    max-width: 100%;
-    overflow: hidden;
-  }
-  
-  .author {
-    max-width: calc(100% - 55px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .icon {
-    flex-shrink: 0;
-    max-width: 24px;
-    max-height: 24px;
-  }
-}
-
-/* Ultra-wide screens */
-@media (min-width: 1920px) {
-  .default,
-  .active,
-  .content {
-    width: 40vw;
-    max-width: 600px;
-  }
-  
-  .image-content-container {
-    width: 50vw;
-    max-width: 800px;
-  }
-  
-  .author-icon {
-    max-width: 100%;
-    overflow: hidden;
-  }
-  
-  .author {
-    max-width: calc(100% - 60px);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  .icon {
-    flex-shrink: 0;
-    max-width: 24px;
-    max-height: 24px;
-  }
-}
-
-/* iPad Pro and large tablets */
-@media (max-width: 1366px) and (min-width: 1024px) {
-  .author-icon {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-  }
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 /* Tablet and smaller screens */
@@ -343,7 +209,7 @@
   }
 }
 
-/* Mobile devices */
+/* tablet */
 @media (max-width: 768px) {
   .accordion {
     padding: 40px 16px 24px;
@@ -353,16 +219,14 @@
   .default,
   .active,
   .content {
-
     padding: 16px;
     gap: 12px;
   }
 
   .image-content-container {
-
     flex-direction: column;
-    align-items: center;
-    padding: 16px;
+    align-items:flex-start;
+    padding: 12px;
     margin: 12px 0;
   }
 
@@ -396,10 +260,7 @@
     min-height: 44px;
     max-width: 44px;
     max-height: 44px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
     border-radius: 50%;
   }
 
@@ -409,7 +270,6 @@
   }
 
   .content {
-
     padding: 12px 16px;
     text-align: left;
     font-size: 14px;
@@ -422,7 +282,6 @@
 /* iPhone and small mobile devices */
 @media (max-width: 480px) {
   .accordion {
-
     padding: 15px 8px 12px !important;
     min-height: auto !important;
     box-sizing: border-box !important;
@@ -439,22 +298,18 @@
   }
 
   .image-content-container {
-    width: calc(100vw - 16px) !important;
-    max-width: calc(100vw - 16px) !important;
-    padding: 8px !important;
+    width: calc(98vw - 16px) !important;
+    max-width: calc(98vw - 16px) !important;
+    padding: 16px 8px !important;
     margin: 6px 0 !important;
     box-sizing: border-box !important;
+    justify-content: flex-start;
   }
 
   .image-accordion {
     width: 75px !important;
     height: 75px !important;
     margin: 0 0 6px 0 !important;
-  }
-
-  .author {
-    font-size: 13px !important;
-    line-height: 16px !important;
   }
 
   .content {
@@ -466,10 +321,10 @@
   }
 
   .icon {
-    min-width: 36px !important;
-    min-height: 36px !important;
-    max-width: 36px !important;
-    max-height: 36px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
     flex-shrink: 0 !important;
     border-radius: 50% !important;
   }
@@ -479,18 +334,17 @@
     height: 16px !important;
   }
 
-  .title-4 {
-    font-size: 14px !important;
-    line-height: 18px !important;
+  .author-icon {
+    gap: 8px !important;
+    width: 80% !important;
   }
 
-  .body-text-16 {
-    font-size: 12px !important;
-    line-height: 16px !important;
+  .author-info {
+    max-width: 80vw !important;
   }
 }
 
-/* Very small iPhone screens (iPhone SE, etc.) */
+/* Very small */
 @media (max-width: 375px) {
   .accordion {
     width: 100% !important;
@@ -500,20 +354,10 @@
     box-sizing: border-box !important;
   }
 
-  .default,
-  .active,
-  .content {
+  .image-content-container {
     width: calc(100vw - 12px) !important;
     max-width: calc(100vw - 12px) !important;
-    padding: 6px !important;
-    gap: 4px !important;
-    box-sizing: border-box !important;
-  }
-
-  .image-content-container {
-    width: calc(95vw - 12px) !important;
-    max-width: calc(95vw - 12px) !important;
-    padding: 6px !important;
+    padding: 12px !important;
     margin: 4px 0 !important;
     box-sizing: border-box !important;
   }
@@ -549,15 +393,5 @@
   svg {
     width: 14px !important;
     height: 14px !important;
-  }
-
-  .title-4 {
-    font-size: 13px !important;
-    line-height: 16px !important;
-  }
-
-  .body-text-16 {
-    font-size: 11px !important;
-    line-height: 14px !important;
   }
 }

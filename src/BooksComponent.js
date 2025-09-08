@@ -14,7 +14,6 @@ function BooksComponent({ id, title, author, publishedDate, image, onAdd, isFavo
                 disabled={isFavourite}
             >
                 {isFavourite ? "Added ✓" : "Add to favourites"}
-
             </button>
         </div>
     )

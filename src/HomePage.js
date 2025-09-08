@@ -13,37 +13,15 @@ function HomePage({ bookList, setBookList }) {
   const [wordSubmitted, setWordSubmitted] = useState('');
   const [mySearch, setMySearch] = useState("");
 
-  // const [stateLoader, setStateLoader] = useState(false);
-
   useEffect(() => {
     const getData = async () => {
 
       if (!wordSubmitted)
         return;
-
       const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${wordSubmitted}&maxResults=12`);
       const data = await response.json();
       console.log(data.items);
 
-
-      //   if (response.ok) {
-      //     setStateLoader(false);
-      //     const data = await response.json();
-      //     console.log("API response:", data);
-      //     setBooks(data);
-      //   } else {
-      //     setStateLoader(false);
-      //     // alert('ingredients entered incorrectly');
-      //     Swal.fire({
-      //       html: `
-      //   <div style="display: flex; flex-direction: column; align-items: center;">
-      //     <svg width="48" height="48" fill="red" viewBox="0 0 24 24"><path d="..."/></svg>
-      //     <h2>double-check your ingredients</h2>
-      //     <p>Enter ingredients in a format, like: 1 cup rice, 1 egg</p>
-      //   </div>
-      // `
-      //     });
-      //   }
       setMyBooks(data.items);
     }
     getData();
@@ -68,20 +46,12 @@ function HomePage({ bookList, setBookList }) {
   };
 
 
-
-
-
-
-
   return (<div>
     {/* {stateLoader && <LoaderPage />} */}
 
     <div className='search-books-wrapper'>
-
       <h1>Book <span>Finder</span></h1>
       <p className="description-text body-text-16" >Search for your favorite books by title.</p>
-
-
 
       <form onSubmit={finalSearch}>
         <input
@@ -107,12 +77,10 @@ function HomePage({ bookList, setBookList }) {
           );
         })}
       </div>
-
     </div>
 
     <Slides />
   </div>
-
   );
 }
 
