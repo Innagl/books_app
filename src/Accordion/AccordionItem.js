@@ -21,7 +21,7 @@ export const AccordionItem = ({ image, author, country, sold, content }) => {
                     <div className={isOpen ? 'active' : 'default'} onClick={handleIsopen}>
 
                         <div className="author-icon">
-                            <div>
+                            <div className="author-info">
                                 <p className="overline">{country}</p>
                                 <div className="author title-4">{author}</div>
                                 <div className="sold-info">

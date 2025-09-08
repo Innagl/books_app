@@ -84,7 +84,8 @@
   text-align: left;
   width: 30vw;
   transition: all 0.3s ease;
-  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .image-accordion {
@@ -99,14 +100,15 @@
 
 
 .icon {
-display: inline-flex;
-padding: var(--spacing-1, 4px);
-align-items: center;
-gap: 10px;
-width: 24px;
-height: 24px;
-border-radius: 16px;
-background: #CDE7BE;
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 16px;
+  background: #CDE7BE;
+  flex-shrink: 0;
 }
 
 
@@ -121,8 +123,16 @@ background: #CDE7BE;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
   width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.author-icon > div:first-child {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
 }
 
 
@@ -151,11 +161,20 @@ background: #CDE7BE;
   transition: all 0.3s ease;
 }
 
+.image-content-container > div {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+}
+
 
 .author {
   font-weight: bold;
   white-space: nowrap;
   width: 28vw;
+  max-width: calc(100% - 50px);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .book-icon {
@@ -167,14 +186,116 @@ background: #CDE7BE;
 .sold-info {
   display: flex;
   align-items: center;
+  width: 80%;
   margin-top: 8px;
   font-size: 14px;
   color: #C4CCCC;
 }
 
+.author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  max-width: calc(100% - 50px);
+}
 
 
-/* âœ… MOBILE RESPONSIVENESS FOR DIDYOUKNOW */
+
+/* Ã¢Å“â€¦ MOBILE RESPONSIVENESS FOR DIDYOUKNOW */
+
+/* Large desktop screens */
+@media (min-width: 1001px) {
+  .author-icon {
+    max-width: 100%;
+  }
+  
+  .author {
+    max-width: calc(100% - 50px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .icon {
+    flex-shrink: 0;
+    max-width: 24px;
+    max-height: 24px;
+  }
+  
+  .content {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+  }
+}
+
+/* Large desktop screens (1600-1920px) */
+@media (min-width: 1600px) and (max-width: 1919px) {
+  .default,
+  .active,
+  .content {
+    width: 35vw;
+    max-width: 550px;
+  }
+  
+  .image-content-container {
+    width: 45vw;
+    max-width: 700px;
+  }
+  
+  .author-icon {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .author {
+    max-width: calc(100% - 55px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .icon {
+    flex-shrink: 0;
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+  .default,
+  .active,
+  .content {
+    width: 40vw;
+    max-width: 600px;
+  }
+  
+  .image-content-container {
+    width: 50vw;
+    max-width: 800px;
+  }
+  
+  .author-icon {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  .author {
+    max-width: calc(100% - 60px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .icon {
+    flex-shrink: 0;
+    max-width: 24px;
+    max-height: 24px;
+  }
+}
 
 /* iPad Pro and large tablets */
 @media (max-width: 1366px) and (min-width: 1024px) {
@@ -204,7 +325,6 @@ background: #CDE7BE;
     width: 80vw;
     max-width: 600px;
     flex-direction: column;
-    text-align: center;
     padding: 20px;
   }
 
@@ -247,8 +367,8 @@ background: #CDE7BE;
   }
 
   .image-accordion {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     margin: 0 0 12px 0;
     flex-shrink: 0;
   }
@@ -259,6 +379,7 @@ background: #CDE7BE;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
+    min-width: 0;
   }
 
   .author {
@@ -266,14 +387,20 @@ background: #CDE7BE;
     text-align: left;
     font-size: 16px;
     line-height: 20px;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .icon {
     min-width: 44px;
     min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
   }
 
   svg {
@@ -304,22 +431,24 @@ background: #CDE7BE;
   .default,
   .active,
   .content {
-
+    width: calc(100vw - 16px) !important;
+    max-width: calc(100vw - 16px) !important;
     padding: 8px !important;
     gap: 6px !important;
     box-sizing: border-box !important;
   }
 
   .image-content-container {
-
+    width: calc(100vw - 16px) !important;
+    max-width: calc(100vw - 16px) !important;
     padding: 8px !important;
     margin: 6px 0 !important;
     box-sizing: border-box !important;
   }
 
   .image-accordion {
-    width: 50px !important;
-    height: 50px !important;
+    width: 75px !important;
+    height: 75px !important;
     margin: 0 0 6px 0 !important;
   }
 
@@ -339,6 +468,10 @@ background: #CDE7BE;
   .icon {
     min-width: 36px !important;
     min-height: 36px !important;
+    max-width: 36px !important;
+    max-height: 36px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
   }
 
   svg {
@@ -370,24 +503,24 @@ background: #CDE7BE;
   .default,
   .active,
   .content {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: calc(100vw - 12px) !important;
+    max-width: calc(100vw - 12px) !important;
     padding: 6px !important;
     gap: 4px !important;
     box-sizing: border-box !important;
   }
 
   .image-content-container {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: calc(95vw - 12px) !important;
+    max-width: calc(95vw - 12px) !important;
     padding: 6px !important;
     margin: 4px 0 !important;
     box-sizing: border-box !important;
   }
 
   .image-accordion {
-    width: 45px !important;
-    height: 45px !important;
+    width: 68px !important;
+    height: 68px !important;
     margin: 0 0 4px 0 !important;
   }
 
@@ -407,6 +540,10 @@ background: #CDE7BE;
   .icon {
     min-width: 32px !important;
     min-height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
   }
 
   svg {

@@ -4,7 +4,7 @@ export const list = [
         image: "/images/rowling.jpg",
         country: "UNITED KINGDOM",
         author: "J.K. Rowling",
-        sold: "600+ million copies (Harry Potter series)",
+        sold: "600+ million copies",
         content: "Wrote much of the first Harry Potter book in cafés because she couldn’t afford heating at home. She was rejected by 12 publishers before Bloomsbury finally accepted the manuscript. She became the first billionaire author in history, though she has since donated much of her wealth."
     },
 
