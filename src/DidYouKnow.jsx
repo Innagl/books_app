@@ -1,4 +1,4 @@
-import { Accordion } from './Accordion/Accordion';
+import { Accordion } from './Components/Accordion/Accordion.jsx';
 import './App.css';
 
 const DidYouKnow = () => {

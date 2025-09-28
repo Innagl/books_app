@@ -1,4 +1,4 @@
-export const list = [
+export const accordionsData = [
 
     {
         image: "/images/rowling.jpg",
@@ -59,3 +59,5 @@ export const list = [
 
 
 ]
+
+export default accordionsData;
