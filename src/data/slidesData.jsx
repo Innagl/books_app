@@ -39,3 +39,5 @@ export const slidesData = [
 
 
 ]
+
+export default slidesData;

@@ -1,6 +1,6 @@
 body {
     color: #ffffff;
-    background-image: url("/public/images/library.png");
+    background-image: url("/images/library.png");
     background-size: cover;
     background-color: rgba(24, 26, 26, 0.8);
     background-blend-mode: darken;
@@ -84,8 +84,23 @@ nav {
     display: flex;
     justify-content: flex-end;
     padding: 16px;
-
 }
+
+.total-books {
+    margin-left: 6px;
+    background: #cde7be;
+    /* light green background */
+    color: #222;
+    /* dark text */
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 16px;
+    /* pill shape */
+    font-size: 14px;
+    width: 16px;
+    height: 16px;
+}
+
 
 .item {
     padding: 16px 8px;
@@ -143,8 +158,9 @@ svg {
     width: 16vw;
     text-align: center;
     background-color: #222;
-    padding: 16px 12px;
-    gap: 12px;
+    padding: 20px 16px 0px;
+    gap: 16px;
+    margin: 0px;
     border-radius: 12px;
     border: solid 1px #595c5c;
 }
@@ -194,10 +210,13 @@ input:focus {
     outline-offset: 2px;
 }
 
+
 .book-author {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
+    min-height: calc(1.4em * 2 + 1.2em);
+    /* title (2 lines) + 1 line author */
 }
 
 .fact-container {
@@ -233,6 +252,7 @@ button {
     min-width: 120px;
     max-width: 200px;
     width: auto;
+    margin: 0;
 }
 
 .filled-btn {
@@ -254,6 +274,7 @@ button {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     font-size: 16px;
+    margin: 0px;
 }
 
 .stroke-btn:hover {
@@ -272,6 +293,7 @@ button {
 
 form {
     display: flex;
+
     flex-direction: row;
     gap: 16px;
     margin: 56px 0px 32px 0px;
@@ -292,7 +314,6 @@ form {
     text-overflow: ellipsis;
     font-size: 16px;
     line-height: 1.4;
-    max-height: calc(1.4em * 2);
 }
 
 .books-loved {
@@ -327,7 +348,7 @@ form {
     width: 40vw;
 }
 
-.favourite-card {
+.favorite-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -341,7 +362,7 @@ form {
     background-color: none;
 }
 
-.favourites {
+.favorites {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -351,21 +372,21 @@ form {
     width: 60vw;
 }
 
-.favourites h2 {
+.favorites h2 {
     font-size: 24px;
     font-weight: 600;
     color: #EAF4F4;
     margin-bottom: 16px;
 }
 
-.favourites ul {
+.favorites ul {
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
 }
 
-.favourites li {
+.favorites li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -461,7 +482,7 @@ form {
 }
 
 @media (max-width: 860px) {
-    .favourites li {
+    .favorites li {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -492,6 +513,13 @@ form {
 }
 
 @media (max-width: 480px) {
+
+    h1 {
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: 600;
+    }
+
     nav {
         display: flex;
         justify-content: space-between;
@@ -543,23 +571,7 @@ form {
         box-sizing: border-box;
     }
 
-    /* .accordion {
-        padding-top: 0;
-    } */
-
-    /* .default,
-    .active,
-    .content {
-
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        gap: 8px !important;
-        padding: 8px !important;
-        box-sizing: border-box !important;
-    } */
-
-    .favourite-card {
+    .favorite-card {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
@@ -606,6 +618,7 @@ form {
     .book-card {
         width: 80vw;
         max-width: 360px;
+        margin: 0px;
     }
 
     .container-books-founded {
@@ -633,7 +646,7 @@ form {
         max-width: 300px;
     }
 
-    .favourites li {
+    .favorites li {
         display: flex;
         flex-direction: column;
         align-items: center;
