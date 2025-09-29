@@ -28,7 +28,7 @@ Responsive Design → Works on desktop, tablet, and mobile.
 
 🛠️ Tech Stack
 
-React 18 with functional components and hooks
+React 19 with functional components and hooks
 
 React Router DOM for navigation
 
