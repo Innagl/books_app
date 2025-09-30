@@ -10,11 +10,18 @@ const Favorites = () => {
   return (
     <div className="favorites">
       <h2>My Favourite Books</h2>
-      <ul>
-        {favoritesAllIBooks.map(fav => <FavoritesItem
-          key={fav.id} favoritesItem={fav}
-        />)}
-      </ul>
+
+      {favoritesAllIBooks.length === 0 ?
+        (<p className="description-text body-text-16">You have no favorite books yet.</p>
+        ) : (
+
+          <ul>
+            {favoritesAllIBooks.map(fav => (
+              <FavoritesItem
+                key={fav.id} favoritesItem={fav} />
+            ))}
+          </ul>
+        )}
     </div>
   );
 };
