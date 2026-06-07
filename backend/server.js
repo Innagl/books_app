@@ -39,6 +39,43 @@ app.post("/api/notes", (req, res) => {
   res.status(201).json(newNote);
 });
 
+// PUT - update a note
+app.put("/api/notes/:id", (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const noteIndex = notes.findIndex((note) => note.id === id);
+
+  if (noteIndex === -1) {
+    return res.status(404).json({ message: "Note not found" });
+  }
+
+  const { title, author, googleBookId, thumbnail, noteText, rating } = req.body;
+
+  notes[noteIndex] = {
+    ...notes[noteIndex],
+    title: title ?? notes[noteIndex].title,
+    author: author ?? notes[noteIndex].author,
+    googleBookId: googleBookId ?? notes[noteIndex].googleBookId,
+    thumbnail: thumbnail ?? notes[noteIndex].thumbnail,
+    noteText: noteText ?? notes[noteIndex].noteText,
+    rating: rating ?? notes[noteIndex].rating,
+  };
+
+  res.json(notes[noteIndex]);
+});
+
+// DELETE - remove a note
+app.delete("/api/notes/:id", (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const noteIndex = notes.findIndex((note) => note.id === id);
+
+  if (noteIndex === -1) {
+    return res.status(404).json({ message: "Note not found" });
+  }
+
+  const deletedNote = notes.splice(noteIndex, 1)[0];
+  res.json(deletedNote);
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
